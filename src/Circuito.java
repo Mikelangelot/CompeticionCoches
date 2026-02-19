@@ -18,10 +18,8 @@ public class Circuito {
 
     //Métodos
     public void anhadirCarrera(carrera:Carrera){
-
     }
-
     public int obtenerCarrerasTotales(){
-
+        return 0;
     }
 }
