@@ -11,7 +11,12 @@ public class Coche {
         this.fiabilidad=fiabilidad;
 
     }
+    public boolean acabarCarrera (int kilometros){
+        return false;
 
+    }public String getEscuderia(){return null;}
+    public double getVelocidadMaxima(){return 0;}
+    public String mostrarCoche(){return null;}
 
     }
 
