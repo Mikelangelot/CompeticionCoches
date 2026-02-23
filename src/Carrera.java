@@ -16,11 +16,27 @@ public class Carrera {
         this.piloto = piloto;
         this.pilotoOrdenPuesto = new Piloto[piloto.length];
     }
-    public boolean isCarreraCorrida() { return carreraCorrida; }
-    public Circuito getQueCircuitoEs() { return queCircuitoEs; }
-    public Piloto[] getPilotoOrdenPuesto() { return pilotoOrdenPuesto; }
-    public int getTemporada() { return temporada; }
-    public int getVueltas() { return vueltas; }
+
+    public boolean isCarreraCorrida() {
+        return carreraCorrida;
+    }
+
+    public Circuito getQueCircuitoEs() {
+        return queCircuitoEs;
+    }
+
+    public Piloto[] getPilotoOrdenPuesto() {
+        return pilotoOrdenPuesto;
+    }
+
+    public int getTemporada() {
+        return temporada;
+    }
+
+    public int getVueltas() {
+        return vueltas;
+    }
+
     public double longitudTotal() {
         return queCircuitoEs.getLongitudCircuitoKM() * vueltas;
     }
@@ -32,7 +48,20 @@ public class Carrera {
         }
         int km = (int) longitudTotal();
         double[] velocidades = new double[piloto.length];
-        return false;
-    }
 
+        for (int i = 0; i < piloto.length; i++) {
+            double vel = piloto[i].velocidadMedia();
+            boolean acaba = piloto[i].getCoche().acabaCarrera(km);
+
+            if (!acaba) {
+                vel = 0;
+            }
+            velocidades[i] = vel;
+            System.out.println(piloto[i].getNombre() + " va a una media de " + String.format("%.2f", vel) + " km/h");
+        }
+
+        carreraCorrida = true;
+        return true;
+    }
 }
+
