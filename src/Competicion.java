@@ -31,11 +31,17 @@ public class Competicion {
             System.out.println("No se puede añadir carrera, el campeonato ya se ha iniciado.");
             return false;
         }
-
         //Comprobar si ya existe carrera en el circuito
          for(int i=0;i<numCarreras;i++){
-             if(carreras[i].g)
+             if(carreras[i].getQueCircuitoEs() == circuito){
+                 System.out.println("Ya existe una carrera en el circuito");
+                 return false;
+             }
          }
+         carreras[numCarreras] = new Carrera();
+         numCarreras++;
+         System.out.println("Carrera añadida");
+         return true;
 
 
      }
