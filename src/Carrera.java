@@ -10,27 +10,29 @@ public class Carrera {
 
 
     //Métodos
-    public double longitudTotal(){
+    public double longitudTotal() {
         return queCircuitoEs.getLongitudCircuitoKM() * vueltas;
     }
 
-    public boolean ejecutarCarrera(){
-        if (ejecutarCarrera==true){
+    public boolean ejecutarCarrera() {
+        if (carreraCorrida == true) {
+            return false;
+        } else {
+            carreraCorrida = true;
+
             return true;
         }
     }
 
-    public String velocidadMedia(){
+    public String velocidadMedia() {
 
     }
 
 
-
     // Getters
-
-
-
-
+    public Circuito getQueCircuitoEs() {
+        return queCircuitoEs;
+    }
 
 
 }
