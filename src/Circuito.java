@@ -18,7 +18,6 @@ public class Circuito {
 
     //Métodos
     public void anhadirCarrera(Carrera arrayCarreras){
-        return 0;
     }
 
     public int obtenerCarrerasTotales(){
