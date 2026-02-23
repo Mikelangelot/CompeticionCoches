@@ -18,8 +18,16 @@ public class Circuito {
 
     //Métodos
     public void anhadirCarrera(Carrera arrayCarreras){
+        return 0;
     }
+
     public int obtenerCarrerasTotales(){
         return 0;
+    }
+
+    //Getters
+
+    public int getLongitudCircuitoKM() {
+        return longitudCircuitoKM;
     }
 }
