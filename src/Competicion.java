@@ -26,6 +26,7 @@ public class Competicion {
         return false;
      }
      public boolean anhadirCarrera(Circuito circuito, int vueltas){
+
         if(campeonatoIniciado){
             System.out.println("No se puede añadir carrera, el campeonato ya se ha iniciado.");
             return false;

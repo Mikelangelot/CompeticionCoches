@@ -3,7 +3,7 @@ public class Coche {
 
     private String escuderia;
     private double velocidadMaxima;
-    private boolean fiabilidad;
+    private double fiabilidad;
 
     public Coche (String escuderia, double velocidadMaxima, boolean fiabilidad){
         this.escuderia=escuderia;
@@ -11,10 +11,10 @@ public class Coche {
         this.fiabilidad=fiabilidad;
 
     }
-    public boolean acabarCarrera (int kilometros){
-        boolean fiabilidad;
-        return true;
+    public double acabaCarrera (int kilometros){
+        double fiabilidad;
 
+        return fiabilidad;
     }
     public String getEscuderia(){
         return null;
@@ -24,6 +24,10 @@ public class Coche {
     }
     public String mostrarCoche(){
         return null;
+    }
+
+    public boolean isFiabilidad() {
+        return fiabilidad;
     }
 }
 

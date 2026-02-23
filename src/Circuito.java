@@ -30,4 +30,8 @@ public class Circuito {
     public int getLongitudCircuitoKM() {
         return longitudCircuitoKM;
     }
+
+    public String getNombreCircuito() {
+        return nombreCircuito;
+    }
 }

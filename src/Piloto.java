@@ -8,12 +8,15 @@ public class Piloto {
     }
 
     public double velocidadMedia(){
-        return 0;
+        double factorAleatorio = 0.9 + (rand.nextDouble() * 0.1);
+
+        return coche.getVelocidadMaxima() * habilidad * factorAleatorio * coche.;
     }
 
     public String getNombre(){return null;}
     public int getEdad() {return 0;}
     public Coche getCoche(){return null;}
     public String mostrarPiloto(){return null;}
+    public double getHabilidad(){return 0;}
 
 }
