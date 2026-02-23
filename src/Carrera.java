@@ -8,6 +8,13 @@ public class Carrera {
     private Piloto[] piloto;
     private Piloto[] pilotoOrdenPuesto;
 
+    public Carrera(Circuito queCircuitoEs, int vueltas, int temporada, Piloto[] piloto) {
+        this.carreraCorrida = false;
+        this.queCircuitoEs = queCircuitoEs;
+        this.vueltas = vueltas;
+        this.temporada = temporada;
+        this.piloto = piloto;
+        this.pilotoOrdenPuesto = new Piloto[piloto.length];
 
     //Métodos
     public double longitudTotal() {
