@@ -10,13 +10,14 @@ public class Carrera {
 
 
     //Métodos
-
     public double longitudTotal(){
         return queCircuitoEs.getLongitudCircuitoKM() * vueltas;
     }
 
     public boolean ejecutarCarrera(){
-
+        if (ejecutarCarrera==true){
+            return true;
+        }
     }
 
     public String velocidadMedia(){
