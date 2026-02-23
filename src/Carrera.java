@@ -18,7 +18,7 @@ public class Carrera {
         if (carreraCorrida == true) {
             return false;
         } else {
-            carreraCorrida=true;
+            carreraCorrida = true;
 
             return true;
         }
@@ -30,6 +30,9 @@ public class Carrera {
 
 
     // Getters
+    public Circuito getQueCircuitoEs() {
+        return queCircuitoEs;
+    }
 
 
 }
