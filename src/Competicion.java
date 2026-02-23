@@ -37,7 +37,7 @@ public class Competicion {
                  System.out.println("Ya existe una carrera en el circuito");
                  return false;
              }
-         }
+         } // Añadir carrera sin que llege al límite
          carreras[numCarreras] = new Carrera();
          numCarreras++;
          System.out.println("Carrera añadida");
@@ -51,6 +51,9 @@ public class Competicion {
      public void imprimirResultado(){
      }
     public void imprimirResultadoEscuderia() {
+        String[] escuderias = new String[numPilotos]; //Guarda nombres escuderos
+        int[] puntos = new int[numPilotos]; //Guarda nombres pilotos
+        int contador= 0;
     }
 
 
