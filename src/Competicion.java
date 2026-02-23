@@ -22,7 +22,19 @@ public class Competicion {
         return nombreComp;
     }
     //Métodos
-     public boolean anhadirPiloto(Piloto piloto){
+    public boolean anhadirPiloto(Piloto piloto) {
+        if (campeonatoIniciado == true) {
+            System.out.println("No se puede añadir nuevos pilotos porque el campeonato " +
+                    "ya ha comenzado");
+        } else {
+            Piloto[] nuevo = new Piloto[pilotos.length + 1];
+            for (int i = 0; i < pilotos.length; i++) {
+                nuevo[i] = pilotos[i];
+            }
+            nuevo[nuevo.length - 1] = piloto;
+            pilotos = nuevo;
+
+        }
         return false;
      }
      public boolean anhadirCarrera(Circuito circuito, int vueltas){
