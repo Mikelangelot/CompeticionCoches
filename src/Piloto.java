@@ -7,7 +7,10 @@ public class Piloto {
     private double habilidad;
     private Random rand;
 
-    public Piloto(String nombre, int edad,Coche coche, double habilidad){
+    public Piloto(String nombre, int edad,Coche coche, String inputHabilidad){
+        if (inputHabilidad.equalsIgnoreCase( "Excelente"){
+            habilidad
+        }
     }
 
     public double velocidadMedia(){
@@ -21,5 +24,6 @@ public class Piloto {
     public Coche getCoche(){return null;}
     public String mostrarPiloto(){return null;}
     public double getHabilidad(){return 0;}
+
 
 }
