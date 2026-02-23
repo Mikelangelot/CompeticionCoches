@@ -15,32 +15,24 @@ public class Carrera {
         this.temporada = temporada;
         this.piloto = piloto;
         this.pilotoOrdenPuesto = new Piloto[piloto.length];
-
-    //Métodos
+    }
+    public boolean isCarreraCorrida() { return carreraCorrida; }
+    public Circuito getQueCircuitoEs() { return queCircuitoEs; }
+    public Piloto[] getPilotoOrdenPuesto() { return pilotoOrdenPuesto; }
+    public int getTemporada() { return temporada; }
+    public int getVueltas() { return vueltas; }
     public double longitudTotal() {
         return queCircuitoEs.getLongitudCircuitoKM() * vueltas;
     }
 
     public boolean ejecutarCarrera() {
-        if (carreraCorrida == true) {
+        if (carreraCorrida) {
+            System.out.println("La carrera en " + queCircuitoEs.getNombreCircuito() + " ya se ha corrido.");
             return false;
-        } else {
-            carreraCorrida = true;
-
-            return true;
         }
-
+        int km = (int) longitudTotal();
+        double[] velocidades = new double[piloto.length];
+        return false;
     }
-
-    public String velocidadMedia() {
-return null;
-    }
-
-
-    // Getters
-    public Circuito getQueCircuitoEs() {
-        return queCircuitoEs;
-    }
-
 
 }
