@@ -14,8 +14,6 @@ public class Carrera {
         return queCircuitoEs.getLongitudCircuitoKM() * vueltas;
     }
 
-<<<<<<< HEAD
-
     public boolean ejecutarCarrera() {
         if (carreraCorrida == true) {
             return false;
@@ -24,17 +22,13 @@ public class Carrera {
 
             return true;
         }
-=======
-    public boolean ejecutarCarrera(){
 
->>>>>>> 1cace96 (cambios leves)
     }
 
     public String velocidadMedia() {
-
+return null;
     }
 
-<<<<<<< HEAD
 
     // Getters
     public Circuito getQueCircuitoEs() {
@@ -42,6 +36,4 @@ public class Carrera {
     }
 
 
-=======
->>>>>>> 1cace96 (cambios leves)
 }
