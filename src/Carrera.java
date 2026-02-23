@@ -8,32 +8,31 @@ public class Carrera {
     private Piloto[] piloto;
     private Piloto[] pilotoOrdenPuesto;
 
-
-    //Métodos
+    public Carrera(Circuito queCircuitoEs, int vueltas, int temporada, Piloto[] piloto) {
+        this.carreraCorrida = false;
+        this.queCircuitoEs = queCircuitoEs;
+        this.vueltas = vueltas;
+        this.temporada = temporada;
+        this.piloto = piloto;
+        this.pilotoOrdenPuesto = new Piloto[piloto.length];
+    }
+    public boolean isCarreraCorrida() { return carreraCorrida; }
+    public Circuito getQueCircuitoEs() { return queCircuitoEs; }
+    public Piloto[] getPilotoOrdenPuesto() { return pilotoOrdenPuesto; }
+    public int getTemporada() { return temporada; }
+    public int getVueltas() { return vueltas; }
     public double longitudTotal() {
         return queCircuitoEs.getLongitudCircuitoKM() * vueltas;
     }
 
     public boolean ejecutarCarrera() {
-        if (carreraCorrida == true) {
+        if (carreraCorrida) {
+            System.out.println("La carrera en " + queCircuitoEs.getNombreCircuito() + " ya se ha corrido.");
             return false;
-        } else {
-            carreraCorrida = true;
-
-            return true;
         }
-
+        int km = (int) longitudTotal();
+        double[] velocidades = new double[piloto.length];
+        return false;
     }
-
-    public String velocidadMedia() {
-return null;
-    }
-
-
-    // Getters
-    public Circuito getQueCircuitoEs() {
-        return queCircuitoEs;
-    }
-
 
 }
