@@ -54,6 +54,18 @@ public class Competicion {
         String[] escuderias = new String[numPilotos]; //Guarda nombres escuderos
         int[] puntos = new int[numPilotos]; //Guarda nombres pilotos
         int contador= 0;
+
+        // Recorremos todas las carreras
+        for(int c = 0; c < numCarreras; c++) {
+
+            Carrera carrera = carreras[c];
+
+            // Si la carrera no se ha corrido aún, la saltamos
+            if(!carrera.ejecutarCarrera()) {
+                continue;
+            }
+
+        }
     }
 
 
