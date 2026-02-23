@@ -14,6 +14,7 @@ public class Carrera {
         return queCircuitoEs.getLongitudCircuitoKM() * vueltas;
     }
 
+
     public boolean ejecutarCarrera(){
         if (ejecutarCarrera==true){
             return true;

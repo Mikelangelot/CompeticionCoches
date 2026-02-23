@@ -15,6 +15,7 @@ public class Competicion {
         this.carreras=new Carrera[maxCarreras];
         this.numPilotos=0;
         this.numCarreras=0;
+        this.campeonatoIniciado=false;
     }
 
     public String getNombreComp(){
@@ -25,7 +26,17 @@ public class Competicion {
         return false;
      }
      public boolean anhadirCarrera(Circuito circuito, int vueltas){
-        return false;
+        if(campeonatoIniciado){
+            System.out.println("No se puede añadir carrera, el campeonato ya se ha iniciado.");
+            return false;
+        }
+
+        //Comprobar si ya existe carrera en el circuito
+         for(int i=0;i<numCarreras;i++){
+             if(carreras[i].g)
+         }
+
+
      }
      public boolean arrancarCampeonato(){
         return false;
@@ -34,6 +45,7 @@ public class Competicion {
      }
     public void imprimirResultadoEscuderia() {
     }
+
 
 
 }
