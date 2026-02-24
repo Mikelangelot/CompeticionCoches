@@ -63,8 +63,15 @@ public class Competicion {
             return false;
         }
         campeonatoIniciado=true;
-        for(int i=0;i<numCarreras;i++){
-            carreras[i].ejecutarCarrera();
+        for(int i=0;i<carreras.length;i++){
+            Carrera actual=carreras[i];
+            System.out.println("Corriendo la carrera " + i + " que ocurre en el circuito " + actual.getQueCircuitoEs().getNombreCircuito());
+            boolean resultadoEjecucion = actual.ejecutarCarrera();
+            if (resultadoEjecucion == true) {
+                System.out.println("Se ha corrido con éxito esta carrera.");
+            } else {
+                System.out.println("Esta carrera ya se había corrido! No la corremos de nuevo. ");
+            }
         }
         return true;
     }
@@ -100,6 +107,8 @@ public class Competicion {
 
         }
     }
+
+
 
 
 
