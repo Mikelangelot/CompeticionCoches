@@ -10,10 +10,10 @@ public class Competicion {
     private int temporada;
 
     //Respectivo Constructor
-    public Competicion(String nombreComp,int maxPilotos,int maxCarreras,int temporada){
+    public Competicion(String nombreComp,int temporada){
         this.nombreComp=nombreComp;
-        this.pilotos=new Piloto[maxPilotos];
-        this.carreras=new Carrera[maxCarreras];
+        this.pilotos=new Piloto[0];
+        this.carreras=new Carrera[0];
         this.numPilotos=0;
         this.numCarreras=0;
         this.campeonatoIniciado=false;
@@ -37,28 +37,36 @@ public class Competicion {
 
         }
         return false;
-     }
-     public boolean anhadirCarrera(Circuito circuito, int vueltas){
+    }
+    public boolean anhadirCarrera(Circuito circuito, int vueltas){
 
         if(campeonatoIniciado){
             System.out.println("No se puede añadir carrera, el campeonato ya se ha iniciado.");
             return false;
         }
         //Comprobar si ya existe carrera en el circuito
-         for(int i=0;i<numCarreras;i++){
-             if(carreras[i].getQueCircuitoEs() == circuito){
-                 System.out.println("Ya existe una carrera en el circuito");
-                 return false;
-             }
-         } // Añadir carrera sin que llege al límite
-         carreras[numCarreras] = new Carrera(circuito,vueltas,temporada,pilotos);
-         numCarreras++;
-         System.out.println("Carrera añadida");
-         return true;
+        for(int i=0;i<numCarreras;i++){
+            if(carreras[i].getQueCircuitoEs() == circuito){
+                System.out.println("Ya existe una carrera en el circuito");
+                return false;
+            }
+        }
+        //Crear nuevo array
+        Carrera[] nuevo = new Carrera[numCarreras + 1];
+        //Copiar carreras anteriores
+        for(int i = 0; i < numCarreras; i++){
+            nuevo[i] = carreras[i];
+        }
+        //Añadir nueva carrera
+        nuevo[numCarreras]  =new Carrera(circuito,vueltas,temporada,pilotos);
+        //Para remplazar las carreras por las nuevas
+        carreras=nuevo;
+        numCarreras++;
+        System.out.println("Carrera añadida correctamente");
+        return true;
 
-
-     }
-     public boolean arrancarCampeonato(){
+    }
+    public boolean arrancarCampeonato(){
         if(campeonatoIniciado==true){
             return false;
         }
@@ -75,8 +83,8 @@ public class Competicion {
         }
         return true;
     }
-     public void imprimirResultado(){
-     }
+    public void imprimirResultado(){
+    }
     public void imprimirResultadoEscuderia() {
         String[] escuderias = new String[numPilotos]; //Guarda nombres escuderos
         int[] puntos = new int[numPilotos]; //Guarda nombres pilotos
@@ -101,7 +109,6 @@ public class Competicion {
                 else if (i==1) puntosPiloto=8;
                 else if (i==2) puntosPiloto=5;
                 else puntosPiloto=0;
-
                 String esc = puestos[i].getCoche().getEscuderia(); //Buscar si ya está en el array de escuderías
                 int pos=-1;
                 for(int j=0;i<contador;j++){
@@ -110,15 +117,14 @@ public class Competicion {
                         break;
                     }
 
-                }
             }
-
         }
+
     }
+}
 
 
 
 
 
 }
-
