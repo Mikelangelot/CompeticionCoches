@@ -59,14 +59,14 @@ public class Competicion {
 
      }
      public boolean arrancarCampeonato(){
-        if(ejecutarCarrera=true){
+        if(campeonatoIniciado==true){
             return false;
         }
         campeonatoIniciado=true;
-        for()
-
-
-        return false;
+        for(int i=0;i<numCarreras;i++){
+            carreras[i].ejecutarCarrera();
+        }
+        return true;
     }
      public void imprimirResultado(){
      }
