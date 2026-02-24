@@ -25,7 +25,7 @@ public class Carrera {
         return queCircuitoEs;
     }
 
-    public Piloto[] getPilotoOrdenPuesto() {
+    public Piloto[] getPilotoOrdenPorPuesto() {
         return pilotoOrdenPorPuesto;
     }
 
@@ -66,8 +66,16 @@ public class Carrera {
             Piloto pilotoTemp = pilotoOrdenPorPuesto[i];
             double velTemp = velocidades[i];
             int j = i - 1;
+            while (j >= 0 && velocidades[j] < velTemp) {
+                pilotoOrdenPorPuesto[j + 1] = pilotoOrdenPorPuesto[j];
+                velocidades[j + 1] = velocidades[j];
+                j--;
+            }
+            pilotoOrdenPorPuesto[j + 1] = pilotoTemp;
+            velocidades[j + 1] = velTemp;
         }
         carreraCorrida = true;
+        queCircuitoEs.anhadirCarrera(this);
         return true;
     }
 }
