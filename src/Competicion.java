@@ -102,6 +102,14 @@ public class Competicion {
                 else if (i==2) puntosPiloto=5;
                 else puntosPiloto=0;
 
+                String esc = puestos[i].getCoche().getEscuderia(); //Buscar si ya está en el array de escuderías
+                int pos=-1;
+                for(int j=0;i<contador;j++){
+                    if (escuderias[j].equals(esc)){
+                        pos=j;
+                        break;
+                    }
+
                 }
             }
 
