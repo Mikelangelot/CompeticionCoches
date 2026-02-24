@@ -84,7 +84,7 @@ public class Competicion {
             if(!carrera.ejecutarCarrera()) {
                 continue;
             }
-            Piloto[] puestos = carrera.getPilotoOrdenPorPuesto();
+            Piloto[] puestos = carrera.getPilotoOrdenPuesto();
 
             for(int i=0;i< puestos.length;i++){
                 int puntosPiloto=0;
