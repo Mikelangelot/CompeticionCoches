@@ -6,7 +6,7 @@ public class Carrera {
     private int vueltas;
     private int temporada;
     private Piloto[] piloto;
-    private Piloto[] pilotoOrdenPuesto;
+    private Piloto[] pilotoOrdenPorPuesto;
 
     public Carrera(Circuito queCircuitoEs, int vueltas, int temporada, Piloto[] piloto) {
         this.carreraCorrida = false;
@@ -14,7 +14,7 @@ public class Carrera {
         this.vueltas = vueltas;
         this.temporada = temporada;
         this.piloto = piloto;
-        this.pilotoOrdenPuesto = new Piloto[piloto.length];
+        this.pilotoOrdenPorPuesto = new Piloto[piloto.length];
     }
 
     public boolean isCarreraCorrida() {
@@ -26,7 +26,7 @@ public class Carrera {
     }
 
     public Piloto[] getPilotoOrdenPuesto() {
-        return pilotoOrdenPuesto;
+        return pilotoOrdenPorPuesto;
     }
 
     public int getTemporada() {
@@ -59,7 +59,14 @@ public class Carrera {
             velocidades[i] = vel;
             System.out.println(piloto[i].getNombre() + " va a una media de " + String.format("%.2f", vel) + " km/h");
         }
-
+        for (int i = 0; i < piloto.length; i++) {
+            pilotoOrdenPorPuesto[i] = piloto[i];
+        }
+        for (int i = 1; i < pilotoOrdenPorPuesto.length; i++) {
+            Piloto pilotoTemp = pilotoOrdenPorPuesto[i];
+            double velTemp = velocidades[i];
+            int j = i - 1;
+        }
         carreraCorrida = true;
         return true;
     }
