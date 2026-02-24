@@ -7,15 +7,17 @@ public class Competicion {
     private int numPilotos;
     private int numCarreras;
     private boolean campeonatoIniciado;
+    private int temporada;
 
     //Respectivo Constructor
-    public Competicion(String nombreComp,int maxPilotos,int maxCarreras){
+    public Competicion(String nombreComp,int maxPilotos,int maxCarreras,int temporada){
         this.nombreComp=nombreComp;
         this.pilotos=new Piloto[maxPilotos];
         this.carreras=new Carrera[maxCarreras];
         this.numPilotos=0;
         this.numCarreras=0;
         this.campeonatoIniciado=false;
+        this.temporada=temporada;
     }
 
     public String getNombreComp(){
@@ -50,7 +52,7 @@ public class Competicion {
                  return false;
              }
          } // Añadir carrera sin que llege al límite
-         carreras[numCarreras] = new Carrera();
+         carreras[numCarreras] = new Carrera(circuito,vueltas,temporada,pilotos);
          numCarreras++;
          System.out.println("Carrera añadida");
          return true;
