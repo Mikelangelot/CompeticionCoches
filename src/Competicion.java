@@ -60,6 +60,13 @@ public class Competicion {
 
      }
      public boolean arrancarCampeonato(){
+        if(ejecutarCarrera=true){
+            return false;
+        }
+        campeonatoIniciado=true;
+        for()
+
+
         return false;
     }
      public void imprimirResultado(){
