@@ -1,6 +1,5 @@
 public class Competicion {
-
-    //Atributos con arrays de piloto y carrera.
+    
     private String nombreComp;
     private Piloto[] pilotos;
     private Carrera[] carreras;
@@ -9,7 +8,7 @@ public class Competicion {
     private boolean campeonatoIniciado;
     private int temporada;
 
-    //Respectivo Constructor
+
     public Competicion(String nombreComp,int temporada){
         this.nombreComp=nombreComp;
         this.pilotos=new Piloto[0];
@@ -23,7 +22,6 @@ public class Competicion {
     public String getNombreComp(){
         return nombreComp;
     }
-    //Métodos
     public boolean anhadirPiloto(Piloto piloto) {
         if (campeonatoIniciado == true) {
             System.out.println("No se puede añadir nuevos pilotos porque el campeonato ya ha comenzado");
@@ -44,22 +42,19 @@ public class Competicion {
             System.out.println("No se puede añadir carrera, el campeonato ya se ha iniciado.");
             return false;
         }
-        //Comprobar si ya existe carrera en el circuito
         for(int i=0;i<numCarreras;i++){
             if(carreras[i].getQueCircuitoEs() == circuito){
                 System.out.println("Ya existe una carrera en el circuito");
                 return false;
             }
         }
-        //Crear nuevo array
         Carrera[] nuevo = new Carrera[numCarreras + 1];
-        //Copiar carreras anteriores
+
         for(int i = 0; i < numCarreras; i++){
             nuevo[i] = carreras[i];
         }
-        //Añadir nueva carrera
         nuevo[numCarreras]  =new Carrera(circuito,vueltas,temporada,pilotos);
-        //Para remplazar las carreras por las nuevas
+
         carreras=nuevo;
         numCarreras++;
         System.out.println("Carrera añadida correctamente");
@@ -86,16 +81,16 @@ public class Competicion {
     public void imprimirResultado(){
     }
     public void imprimirResultadoEscuderia() {
-        String[] escuderias = new String[numPilotos]; //Guarda nombres escuderos
-        int[] puntos = new int[numPilotos]; //Guarda nombres pilotos
+        String[] escuderias = new String[numPilotos];
+        int[] puntos = new int[numPilotos];
         int contador= 0; //Contador a 0
 
-        // Recorremos todas las carreras
+
         for(int c = 0; c < numCarreras; c++) {
 
             Carrera carrera = carreras[c];
 
-            // Si la carrera no se ha corrido aún, la saltamos
+
             if(!carrera.ejecutarCarrera()) {
                 continue;
             }
@@ -104,23 +99,33 @@ public class Competicion {
             for(int i=0;i< puestos.length;i++){
                 int puntosPiloto=0;
 
-                //Asignamos puntos según su posición
+
                 if(i==0) puntosPiloto=10;
                 else if (i==1) puntosPiloto=8;
                 else if (i==2) puntosPiloto=5;
                 else puntosPiloto=0;
-                String esc = puestos[i].getCoche().getEscuderia(); //Buscar si ya está en el array de escuderías
+                String esc = puestos[i].getCoche().getEscuderia();
                 int pos=-1;
                 for(int j=0;j<contador;j++){
                     if (escuderias[j].equals(esc)){
                         pos=j;
                         break;
                     }
-
-            }
+                }
+                if(pos ==-1){
+                    escuderias[contador]=esc;
+                    puntos[contador]=puntosPiloto;
+                    contador++;
+                } else {
+                    puntos[pos] += puntosPiloto;
+                }
         }
-
     }
+
+        System.out.println("CLASIFICACIÓN POR ESCUDERÍAS");
+        for(int i=0;i<contador;i++){
+            System.out.println(escuderias[i] + "-" + puntos[i] + "puntos");
+        }
 }
 
 
