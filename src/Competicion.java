@@ -116,12 +116,21 @@ public class Competicion {
                         pos=j;
                         break;
                     }
-
-            }
+                }
+                if(pos ==-1){
+                    escuderias[contador]=esc;
+                    puntos[contador]=puntosPiloto;
+                    contador++;
+                } else {
+                    puntos[pos] += puntosPiloto;
+                }
         }
-
     }
 
+        System.out.println("CLASIFICACIÓN POR ESCUDERÍAS");
+        for(int i=0;i<contador;i++){
+            System.out.println(escuderias[i] + "-" + puntos[i] + "puntos");
+        }
 }
 
 
