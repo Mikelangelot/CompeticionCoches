@@ -129,6 +129,7 @@ public class Competicion {
         }
 
         System.out.println("\n-- CLASIFICACIÓN GENERAL PILOTOS: " + nombreComp.toUpperCase() + " --");
+        System.out.println("-Competición -> " + nombreComp + "-\n");
         for (int i = 0; i < numPilotos; i++) {
             System.out.println((i + 1) + "º - " + pilotosOrdenados[i].getNombre() + " : " + arrayPuntos[i] + " puntos");
         }
