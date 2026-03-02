@@ -80,25 +80,25 @@ public class Competicion {
         return true;
     }
     public void imprimirResultado(){
-        int[] ArrayPuntos = new int[pilotos.length];
-        //Recorremos carreras en este for
+        int[] arrayPuntos = new int[pilotos.length];
+        //Recorremos el array de carreras en este for
         for (int i = 0; i < carreras.length; i++) {
             Carrera c = carreras[i];
-            //Detectar quienes quedaron en 1º,2º y 3º posicion (Porque son los únicos que van a recibir puntos)
+            // Detectar quienes quedaron en 1ª,2ª y 3ª posicion (Porque son los únicos que van a recibir puntos)
             Piloto primero = c.getPilotoOrdenPorPuesto()[0];
             Piloto segundo = c.getPilotoOrdenPorPuesto()[1];
             Piloto tercero = c.getPilotoOrdenPorPuesto()[2];
-            //Recorro array de pilotos generales.
-            for (int PosicionArray = 0; PosicionArray < pilotos.length; PosicionArray++) {
-                //Primera Posición del array sumamos 10 puntos
-                if (pilotos[PosicionArray] == primero) {
-                    ArrayPuntos[PosicionArray] = ArrayPuntos[PosicionArray] + 10;
-                    //Segunda posición del array sumamos 8 puntos
-                } else if (pilotos[PosicionArray] == segundo) {
-                    ArrayPuntos[PosicionArray] = ArrayPuntos[PosicionArray] + 8;
-                    //Tercera Posición del array sumamos 5 puntos
-                } else if (pilotos[PosicionArray] == tercero) {
-                    ArrayPuntos[PosicionArray] = ArrayPuntos[PosicionArray] + 5;
+            // Recorro tod0 el array de pilotos generales.
+            for (int posicionArray = 0; posicionArray < pilotos.length; posicionArray++) {
+                // Primera Posición del array sumamos 10 puntos
+                if (pilotos[posicionArray] == primero) {
+                    arrayPuntos[posicionArray] = arrayPuntos[posicionArray] + 10;
+                    // Segunda posición del array sumamos 8 punto
+                } else if (pilotos[posicionArray] == segundo) {
+                    arrayPuntos[posicionArray] = arrayPuntos[posicionArray] + 8;
+                    // Tercera Posición del array sumamos 5 puntos
+                } else if (pilotos[posicionArray] == tercero) {
+                    arrayPuntos[posicionArray] = arrayPuntos[posicionArray] + 5;
                 }
             }
         }
