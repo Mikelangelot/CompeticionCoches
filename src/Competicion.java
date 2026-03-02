@@ -45,12 +45,12 @@ public class Competicion {
     public boolean anhadirCarrera(Circuito circuito, int vueltas) {
 
         if (campeonatoIniciado) {
-            System.out.println("No se puede añadir carrera, el campeonato ya se ha iniciado.");
+            System.out.println("\nNo se puede añadir carrera, el campeonato ya se ha iniciado.");
             return false;
         }
         for (int i = 0; i < numCarreras; i++) {
             if (carreras[i].getQueCircuitoEs() == circuito) {
-                System.out.println("Ya existe una carrera en el circuito");
+                System.out.println("\nYa existe una carrera en el circuito");
                 return false;
             }
         }
@@ -63,7 +63,7 @@ public class Competicion {
 
         carreras = nuevo;
         numCarreras++;
-        System.out.println("Carrera añadida correctamente");
+        System.out.println("\nCarrera añadida correctamente");
         return true;
 
     }
@@ -75,12 +75,12 @@ public class Competicion {
         campeonatoIniciado = true;
         for (int i = 0; i < carreras.length; i++) {
             Carrera actual = carreras[i];
-            System.out.println("Corriendo la carrera " + i + " que ocurre en el circuito " + actual.getQueCircuitoEs().getNombreCircuito());
+            System.out.println("\nCorriendo la carrera " + i + " que ocurre en el circuito " + actual.getQueCircuitoEs().getNombreCircuito());
             boolean resultadoEjecucion = actual.ejecutarCarrera();
             if (resultadoEjecucion == true) {
-                System.out.println("Se ha corrido con éxito esta carrera.");
+                System.out.println("\nSe ha corrido con éxito esta carrera.");
             } else {
-                System.out.println("Esta carrera ya se había corrido! No la corremos de nuevo. ");
+                System.out.println("\nEsta carrera ya se había corrido! No la corremos de nuevo. ");
             }
         }
         return true;

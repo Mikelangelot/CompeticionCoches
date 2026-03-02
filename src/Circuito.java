@@ -24,7 +24,7 @@ public class Circuito {
         }
         nuevoArray[nuevoArray.length - 1] = carrera;
         this.arrayCarreras = nuevoArray;
-        System.out.println("Carrera añadida. Ahora hay: " + arrayCarreras.length);
+        System.out.println("\nCarrera añadida. Ahora hay: " + arrayCarreras.length);
     }
 
     public int obtenerCarrerasTotales() {
