@@ -8,6 +8,9 @@ public class Piloto {
     private Random rand = new Random();
 
     public Piloto(String nombre, int edad,Coche coche, String inputHabilidad){
+        this.nombre = nombre;
+        this.edad = edad;
+        this.coche = coche;
         if (inputHabilidad.equalsIgnoreCase( "Excelente")){
             //hacer un random entre 0,9 y 1
             habilidad = 0.9 + (rand.nextDouble() * 0.1);
