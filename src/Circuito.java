@@ -9,10 +9,10 @@ public class Circuito {
 
     // Constructor de Circuito, llamando a los atributos privados
 
-    public Circuito(String nombreCircuito, int longitudCircuitoKM, Carrera[] arrayCarreras) {
+    public Circuito(String nombreCircuito, int longitudCircuitoKM) {
         this.nombreCircuito = nombreCircuito;
         this.longitudCircuitoKM = longitudCircuitoKM;
-        this.arrayCarreras = arrayCarreras;
+        this.arrayCarreras = new Carrera[0];
     }
 
 
