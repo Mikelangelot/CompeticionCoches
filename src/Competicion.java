@@ -35,7 +35,7 @@ public class Competicion {
             for (int i = 0; i < pilotos.length; i++) {
                 nuevo[i] = pilotos[i];
             }
-            nuevo[nuevo.length - 1] = piloto;
+            nuevo[numPilotos] = piloto;
             pilotos = nuevo;
             numPilotos++;
             return true;
@@ -109,7 +109,12 @@ public class Competicion {
                 }
             }
         }
+        System.out.println("\nCLASIFICACIÓN GENERAL");
+        for (int i=0;i< numPilotos;i++){
+            System.out.println(pilotos[i].getNombre() + " - " + arrayPuntos[i] + " puntos");
+        }
     }
+
 
     public void imprimirResultadoEscuderia() {
         String[] escuderias = new String[numPilotos];
