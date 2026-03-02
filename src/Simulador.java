@@ -1,5 +1,22 @@
+import java.util.Scanner;
+
 public class Simulador {
     public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        System.out.print("Introduce el nombre de la competición 1: ");
+        String nombre1 = teclado.nextLine();
+        System.out.print("Introduce el nombre de la competición 2: ");
+        String nombre2 = teclado.nextLine();
+        System.out.print("Introduce el nombre del primer circuito: ");
+        String nombrec1 = teclado.nextLine();
+        System.out.print("Introduce el nombre del segundo circuito: ");
+        String nombrec2 = teclado.nextLine();
+        System.out.print("Introduce el nombre del tercer circuito: ");
+        String nombrec3 = teclado.nextLine();
+        System.out.print("Introduce el nombre del cuarto circuito: ");
+        String nombrec4 = teclado.nextLine();
+
+
         //Creamos los 6 coches
         Coche coche1 = new Coche("Aston Martin", 340, 0.4);
         Coche coche2 = new Coche("Aston Martin", 337, 0.5);
@@ -16,13 +33,13 @@ public class Simulador {
         Piloto piloto6 = new Piloto("Vettel", 40, coche6, "Mediocre");
 
 
-        Competicion competicion1 = new Competicion("GP de España", 1);
-        Competicion competicion2 = new Competicion("Gp de Bahrein", 2);
+        Competicion competicion1 = new Competicion(nombre1, 1);
+        Competicion competicion2 = new Competicion(nombre2, 2);
 
-        Circuito circuito1 = new Circuito("Barcelona", 8);
-        Circuito circuito2 = new Circuito("Madrid", 10);
-        Circuito circuito3 = new Circuito("Endurance", 11);
-        Circuito circuito4 = new Circuito("Grand Prix", 20);
+        Circuito circuito1 = new Circuito(nombrec1, 8);
+        Circuito circuito2 = new Circuito(nombrec2, 10);
+        Circuito circuito3 = new Circuito(nombrec3, 11);
+        Circuito circuito4 = new Circuito(nombrec4, 20);
 
         Piloto[] pilotos = {piloto1, piloto2, piloto3, piloto4, piloto5, piloto6};
 
