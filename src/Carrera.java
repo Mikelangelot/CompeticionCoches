@@ -17,22 +17,28 @@ public class Carrera {
         this.piloto = piloto;
         this.pilotoOrdenPorPuesto = new Piloto[piloto.length];
     }
+
     //Getters
     public boolean isCarreraCorrida() {
         return carreraCorrida;
     }
+
     public Circuito getQueCircuitoEs() {
         return queCircuitoEs;
     }
+
     public Piloto[] getPilotoOrdenPorPuesto() {
         return pilotoOrdenPorPuesto;
     }
+
     public int getTemporada() {
         return temporada;
     }
+
     public int getVueltas() {
         return vueltas;
     }
+
     public double longitudTotal() {
         return queCircuitoEs.getLongitudCircuitoKM() * vueltas;
     }
@@ -77,7 +83,7 @@ public class Carrera {
         carreraCorrida = true;
         queCircuitoEs.anhadirCarrera(this);
 
-        System.out.println("\n Resultado de la carrera en " + queCircuitoEs.getNombreCircuito()+" :");
+        System.out.println("\n Resultado de la carrera en " + queCircuitoEs.getNombreCircuito() + " :");
         for (int i = 0; i < pilotoOrdenPorPuesto.length; i++) {
             System.out.println((i + 1) + "º - " + pilotoOrdenPorPuesto[i].getNombre() + " (" + String.format("%.2f", velocidades[i]) + " km/h)");
         }

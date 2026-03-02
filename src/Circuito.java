@@ -4,7 +4,7 @@ public class Circuito {
 
     private String nombreCircuito;
     private int longitudCircuitoKM;
-    private Carrera [] arrayCarreras;
+    private Carrera[] arrayCarreras;
 
 
     // Constructor de Circuito, llamando a los atributos privados
@@ -17,7 +17,7 @@ public class Circuito {
 
 
     //Métodos
-    public void anhadirCarrera(Carrera carrera){
+    public void anhadirCarrera(Carrera carrera) {
         Carrera[] nuevoArray = new Carrera[this.arrayCarreras.length + 1];
         for (int i = 0; i < arrayCarreras.length; i++) {
             nuevoArray[i] = arrayCarreras[i];
@@ -27,7 +27,7 @@ public class Circuito {
         System.out.println("Carrera añadida. Ahora hay: " + arrayCarreras.length);
     }
 
-    public int obtenerCarrerasTotales(){
+    public int obtenerCarrerasTotales() {
         int total = 0;
         for (int i = 0; i < arrayCarreras.length; i++) {
             if (arrayCarreras[i] != null) {
