@@ -18,12 +18,13 @@ public class Circuito {
 
     //Métodos
     public void anhadirCarrera(Carrera carrera){
+        Carrera[] nuevoArray = new Carrera[this.arrayCarreras.length + 1];
         for (int i = 0; i < arrayCarreras.length; i++) {
-            if (arrayCarreras[i]==null) {
-                arrayCarreras[i]=carrera;
-            }
+            nuevoArray[i] = arrayCarreras[i];
         }
-        System.out.println("Carreras añadidas");
+        nuevoArray[nuevoArray.length - 1] = carrera;
+        this.arrayCarreras = nuevoArray;
+        System.out.println("Carrera añadida. Ahora hay: " + arrayCarreras.length);
     }
 
     public int obtenerCarrerasTotales(){
