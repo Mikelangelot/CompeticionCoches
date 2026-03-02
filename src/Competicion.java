@@ -91,7 +91,7 @@ public class Competicion {
         int[] arrayPuntos = new int[numPilotos];
         Piloto[] pilotosOrdenados = new Piloto[numPilotos];
 
-        // Copiamos el array de pilotos para no alterar el original
+        //Copiamos el array de pilotos para no alterar el original
         for (int i = 0; i < numPilotos; i++) {
             pilotosOrdenados[i] = pilotos[i];
         }
