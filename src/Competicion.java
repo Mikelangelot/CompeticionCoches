@@ -121,6 +121,14 @@ public class Competicion {
         int[] puntos = new int[numPilotos];
         int contador = 0;
 
+        String nombreCarreraActual = "Ninguna";
+        for (int i = numCarreras - 1; i >= 0; i--) {
+            if (carreras[i].isCarreraCorrida()) {
+                nombreCarreraActual = carreras[i].getQueCircuitoEs().getNombreCircuito();
+                break;
+            }
+        }
+
 
         for (int c = 0; c < numCarreras; c++) {
             Carrera carrera = carreras[c];
@@ -159,7 +167,8 @@ public class Competicion {
             }
         }
 
-        System.out.println("\n CLASIFICACIÓN POR ESCUDERÍAS");
+        System.out.println("\n --CLASIFICACIÓN POR ESCUDERÍAS--" +
+                "\n-Carrera actual " + nombreCarreraActual + "-");
         for (int i = 0; i < contador; i++) {
             System.out.println(escuderias[i] + "-" + puntos[i] + "puntos");
         }
