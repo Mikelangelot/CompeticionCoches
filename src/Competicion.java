@@ -75,7 +75,8 @@ public class Competicion {
         campeonatoIniciado = true;
         for (int i = 0; i < carreras.length; i++) {
             Carrera actual = carreras[i];
-            System.out.println("\nCorriendo la carrera Nº" + i + " que ocurre en ' " + actual.getQueCircuitoEs().getNombreCircuito() + " ' " + ":");
+            System.out.println("\n--- [" + nombreComp.toUpperCase() + "] Corriendo carrera en '"
+                    + actual.getQueCircuitoEs().getNombreCircuito().toUpperCase() + "' ---");
             boolean resultadoEjecucion = actual.ejecutarCarrera();
             if (resultadoEjecucion == true) {
                 System.out.println("\nSe ha corrido con éxito esta carrera.");
@@ -87,32 +88,49 @@ public class Competicion {
     }
 
     public void imprimirResultado() {
-        int[] arrayPuntos = new int[pilotos.length];
-        //Recorremos el array de carreras en este for
-        for (int i = 0; i < carreras.length; i++) {
+        int[] arrayPuntos = new int[numPilotos];
+        Piloto[] pilotosOrdenados = new Piloto[numPilotos];
+
+        // Copiamos el array de pilotos para no alterar el original
+        for (int i = 0; i < numPilotos; i++) {
+            pilotosOrdenados[i] = pilotos[i];
+        }
+
+        // Calcular puntos
+        for (int i = 0; i < numCarreras; i++) {
             Carrera c = carreras[i];
-            // Detectar quienes quedaron en 1ª,2ª y 3ª posicion (Porque son los únicos que van a recibir puntos)
+            if (!c.isCarreraCorrida()) continue;
+
             Piloto primero = c.getPilotoOrdenPorPuesto()[0];
             Piloto segundo = c.getPilotoOrdenPorPuesto()[1];
             Piloto tercero = c.getPilotoOrdenPorPuesto()[2];
-            // Recorro tod0 el array de pilotos generales.
-            for (int posicionArray = 0; posicionArray < pilotos.length; posicionArray++) {
-                // Primera Posición del array sumamos 10 puntos
-                if (pilotos[posicionArray] == primero) {
-                    arrayPuntos[posicionArray] = arrayPuntos[posicionArray] + 10;
-                    // Segunda posición del array sumamos 8 puntos
-                } else if (pilotos[posicionArray] == segundo) {
-                    arrayPuntos[posicionArray] = arrayPuntos[posicionArray] + 8;
-                    // Tercera Posición del array sumamos 5 puntos
-                } else if (pilotos[posicionArray] == tercero) {
-                    arrayPuntos[posicionArray] = arrayPuntos[posicionArray] + 5;
+
+            for (int pos = 0; pos < numPilotos; pos++) {
+                if (pilotosOrdenados[pos] == primero) arrayPuntos[pos] += 10;
+                else if (pilotosOrdenados[pos] == segundo) arrayPuntos[pos] += 8;
+                else if (pilotosOrdenados[pos] == tercero) arrayPuntos[pos] += 5;
+            }
+        }
+
+        // Orden De mayor a menor puntuación
+        for (int i = 0; i < numPilotos - 1; i++) {
+            for (int j = 0; j < numPilotos - i - 1; j++) {
+                if (arrayPuntos[j] < arrayPuntos[j + 1]) {
+                    // Intercambiar los puntos
+                    int tempPuntos = arrayPuntos[j];
+                    arrayPuntos[j] = arrayPuntos[j + 1];
+                    arrayPuntos[j + 1] = tempPuntos;
+                    // Intercambiar los pilotos
+                    Piloto tempPiloto = pilotosOrdenados[j];
+                    pilotosOrdenados[j] = pilotosOrdenados[j + 1];
+                    pilotosOrdenados[j + 1] = tempPiloto;
                 }
             }
         }
-        System.out.println("\n--CLASIFICACIÓN GENERAL--");
-        System.out.println("-Competición -> " + nombreComp + "-\n");
-        for (int i=0;i< numPilotos;i++){
-            System.out.println(pilotos[i].getNombre() + " - " + arrayPuntos[i] + " puntos");
+
+        System.out.println("\n-- CLASIFICACIÓN GENERAL PILOTOS: " + nombreComp.toUpperCase() + " --");
+        for (int i = 0; i < numPilotos; i++) {
+            System.out.println((i + 1) + "º - " + pilotosOrdenados[i].getNombre() + " : " + arrayPuntos[i] + " puntos");
         }
     }
 
