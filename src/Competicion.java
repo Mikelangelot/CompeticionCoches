@@ -1,3 +1,5 @@
+import java.lang.reflect.Array;
+
 public class Competicion {
 
     //Atributos con arrays de piloto y carrera.
@@ -83,9 +85,29 @@ public class Competicion {
         }
         return true;
     }
-    public void imprimirResultado(){
+
+    public void imprimirResultado() {
+        int[] ArrayPuntos = new int[pilotos.length];
+        //Recorremos carreras en este for
         for (int i = 0; i < carreras.length; i++) {
-            Carrera carrera = carreras[i];
+            Carrera c = carreras[i];
+            //Detectar quienes quedaron en 1º,2º y 3º posicion (Porque son los únicos que van a recibir puntos)
+            Piloto primero = c.getPilotoOrdenPorPuesto()[0];
+            Piloto segundo = c.getPilotoOrdenPorPuesto()[1];
+            Piloto tercero = c.getPilotoOrdenPorPuesto()[2];
+            //Recorro array de pilotos generales.
+            for (int PosicionArray = 0; PosicionArray < pilotos.length; PosicionArray++) {
+                //Primera Posición del array sumamos 10 puntos
+                if (pilotos[PosicionArray] == primero) {
+                    ArrayPuntos[PosicionArray] = ArrayPuntos[PosicionArray] + 10;
+                    //Segunda posición del array sumamos 8puntos
+                } else if (pilotos[PosicionArray] == segundo) {
+                    ArrayPuntos[PosicionArray] == ArrayPuntos[PosicionArray] + 8;
+                    //Tercera Posición del array sumamos 5 puntos
+                } else (pilotos[PosicionArray] == tercero) {
+                    ArrayPuntos[PosicionArray] == ArrayPuntos[PosicionArray] + 5;
+                }
+            }
         }
 
     }
