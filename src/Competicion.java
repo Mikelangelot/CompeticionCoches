@@ -84,6 +84,10 @@ public class Competicion {
         return true;
     }
     public void imprimirResultado(){
+        for (int i = 0; i < carreras.length; i++) {
+            Carrera carrera = carreras[i];
+        }
+
     }
     public void imprimirResultadoEscuderia() {
         String[] escuderias = new String[numPilotos]; //Guarda nombres escuderos
