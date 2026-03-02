@@ -26,6 +26,12 @@ public class Simulador {
 
         Piloto [] pilotos = {piloto1,piloto2,piloto3,piloto4,piloto5,piloto6};
 
+        for (Piloto p: pilotos)
+        {
+            competicion1.anhadirPiloto(p);
+            competicion2.anhadirPiloto(p);
+
+        }
         competicion1.anhadirCarrera(circuito1,8);
         competicion1.anhadirCarrera(circuito2,10);
         competicion1.anhadirCarrera(circuito3,11);
