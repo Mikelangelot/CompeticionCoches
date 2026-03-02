@@ -24,8 +24,10 @@ public class Competicion {
         return nombreComp;
     }
     public boolean anhadirPiloto(Piloto piloto) {
-        if (campeonatoIniciado == true) {
+        if (campeonatoIniciado) {
             System.out.println("No se puede añadir nuevos pilotos porque el campeonato ya ha comenzado");
+            return false;
+
         } else {
             Piloto[] nuevo = new Piloto[pilotos.length + 1];
             for (int i = 0; i < pilotos.length; i++) {
@@ -33,9 +35,9 @@ public class Competicion {
             }
             nuevo[nuevo.length - 1] = piloto;
             pilotos = nuevo;
-
+            numPilotos++;
+            return true;
         }
-        return false;
     }
     public boolean anhadirCarrera(Circuito circuito, int vueltas){
 
@@ -106,11 +108,10 @@ public class Competicion {
     public void imprimirResultadoEscuderia() {
         String[] escuderias = new String[numPilotos];
         int[] puntos = new int[numPilotos];
-        int contador= 0; //Contador a 0
+        int contador= 0;
 
 
         for(int c = 0; c < numCarreras; c++) {
-
             Carrera carrera = carreras[c];
 
 
@@ -120,15 +121,17 @@ public class Competicion {
             Piloto[] puestos = carrera.getPilotoOrdenPorPuesto();
 
             for(int i=0;i< puestos.length;i++){
-                int puntosPiloto=0;
+                int puntosPiloto;
 
 
                 if(i==0) puntosPiloto=10;
                 else if (i==1) puntosPiloto=8;
                 else if (i==2) puntosPiloto=5;
                 else puntosPiloto=0;
+
                 String esc = puestos[i].getCoche().getEscuderia();
                 int pos=-1;
+
                 for(int j=0;j<contador;j++){
                     if (escuderias[j].equals(esc)){
                         pos=j;
