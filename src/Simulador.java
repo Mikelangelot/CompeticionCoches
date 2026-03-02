@@ -24,10 +24,10 @@ public class Simulador {
         Circuito circuito3 =  new Circuito("Endurance", 8);
         Circuito circuito4 =  new Circuito("Grand Prix", 8);
 
+        Piloto [] pilotos = {piloto1,piloto2,piloto3,piloto4,piloto5,piloto6};
 
-        Carrera carrera1 = new Carrera(1,50,6,6);
-        Carrera carrera2 = new Carrera(2,48,1,6);
-        Carrera carrera3 = new Carrera(3,55,1,6);
+        competicion1.anhadirCarrera(circuito1, 8);
+        competicion2.anhadirCarrera(circuito3, 8);
 
 
     }
