@@ -18,12 +18,12 @@ public class Simulador {
 
 
         //Creamos los 6 coches
-        Coche coche1 = new Coche("Aston Martin", 340, 0.4);
+        Coche coche1 = new Coche("Aston Martin", 340, 0.97);
         Coche coche2 = new Coche("Aston Martin", 337, 0.5);
-        Coche coche3 = new Coche("Red Bull", 380, 0.9);
-        Coche coche4 = new Coche("Red Bull", 375, 0.8);
-        Coche coche5 = new Coche("Mercedes", 360, 0.7);
-        Coche coche6 = new Coche("Mercedes", 355, 0.6);
+        Coche coche3 = new Coche("Red Bull", 380, 0.95);
+        Coche coche4 = new Coche("Red Bull", 375, 0.99);
+        Coche coche5 = new Coche("Mercedes", 360, 0.985);
+        Coche coche6 = new Coche("Mercedes", 355, 0.98);
         //Creamos los 6 pilotos
         Piloto piloto1 = new Piloto("Fernando", 44, coche1, "Excelente");
         Piloto piloto2 = new Piloto("Carlos", 38, coche2, "Bueno");

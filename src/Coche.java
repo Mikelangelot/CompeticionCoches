@@ -15,11 +15,14 @@ public class Coche {
     }
 
     public boolean acabaCarrera(int kilometros) {
-        // Tira el dado 1 sola vez. Si es mayor que la fiabilidad, se rompe.
-        if (rand.nextDouble() > fiabilidad) {
-            return false;
+        //Tira el dado una vez por cada 5 km de la carrera.
+        int tramos = kilometros / 5;
+        for (int i = 0; i < tramos; i++) {
+            if (rand.nextDouble() > fiabilidad) {
+                return false; // Se rompe
+            }
         }
-        return true;
+        return true; // Acaba la carrera
     }
 
     public String getEscuderia() {
@@ -34,8 +37,5 @@ public class Coche {
         return null;
     }
 
-    public double getFiabilidad() {
-        return fiabilidad;
-    }
 }
 
