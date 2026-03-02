@@ -109,7 +109,7 @@ public class Competicion {
                 }
             }
         }
-        System.out.println("\nCLASIFICACIÓN GENERAL");
+        System.out.println("\n--CLASIFICACIÓN GENERAL--");
         for (int i=0;i< numPilotos;i++){
             System.out.println(pilotos[i].getNombre() + " - " + arrayPuntos[i] + " puntos");
         }
@@ -167,7 +167,7 @@ public class Competicion {
             }
         }
 
-        System.out.println("\n --CLASIFICACIÓN POR ESCUDERÍAS--" +
+        System.out.println("\n--CLASIFICACIÓN POR ESCUDERÍAS--" +
                 "\n-Carrera actual " + nombreCarreraActual + "-");
         for (int i = 0; i < contador; i++) {
             System.out.println(escuderias[i] + "-" + puntos[i] + "puntos");
