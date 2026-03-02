@@ -13,16 +13,9 @@ public class Coche {
 
     }
     public boolean acabaCarrera (int kilometros){
-        int tramos = kilometros / 5;
-
-        /*Mientras se cumpla la condición recorremos el bucle y si el número random que se genera es
-        mayor que la fiabilidad (es decir está por encima) rompe (no acaba la carrera, devuelve false),
-        si es menor que la fiabilidad no rompe (acaba la carrera, devuelve true)*/
-
-        for (int i = 0; i < tramos; i++) {
-            if (rand.nextDouble() > fiabilidad) {
-                return false;
-            }
+        // Tira el dado 1 sola vez. Si es mayor que la fiabilidad, se rompe.
+        if (rand.nextDouble() > fiabilidad) {
+            return false;
         }
         return true;
     }

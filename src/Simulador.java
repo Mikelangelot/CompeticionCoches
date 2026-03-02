@@ -35,7 +35,7 @@ public class Simulador {
         competicion1.anhadirCarrera(circuito1,8);
         competicion1.anhadirCarrera(circuito2,10);
         competicion1.anhadirCarrera(circuito3,11);
-        competicion2.anhadirCarrera(circuito1,8);
+        competicion2.anhadirCarrera(circuito4,8);
         competicion2.anhadirCarrera(circuito2,10);
         competicion2.anhadirCarrera(circuito4,20);
 
