@@ -17,11 +17,22 @@ public class Circuito {
 
 
     //Métodos
-    public void anhadirCarrera(Carrera arrayCarreras){
-        
+    public void anhadirCarrera(Carrera carrera){
+        for (int i = 0; i < arrayCarreras.length; i++) {
+            if (arrayCarreras[i]==null) {
+                arrayCarreras[i]=carrera;
+            }
+        }
+        System.out.println("Carreras añadidas");
     }
 
     public int obtenerCarrerasTotales(){
+        int total = 0;
+        for (int i = 0; i < arrayCarreras.length; i++) {
+            if (arrayCarreras[i] != null) {
+                total++;
+            }
+        }
         return 0;
     }
 
