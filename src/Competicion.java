@@ -100,11 +100,11 @@ public class Competicion {
                 //Primera Posición del array sumamos 10 puntos
                 if (pilotos[PosicionArray] == primero) {
                     ArrayPuntos[PosicionArray] = ArrayPuntos[PosicionArray] + 10;
-                    //Segunda posición del array sumamos 8puntos
+                    //Segunda posición del array sumamos 8 puntos
                 } else if (pilotos[PosicionArray] == segundo) {
                     ArrayPuntos[PosicionArray] == ArrayPuntos[PosicionArray] + 8;
                     //Tercera Posición del array sumamos 5 puntos
-                } else (pilotos[PosicionArray] == tercero) {
+                } else if (pilotos[PosicionArray] == tercero) {
                     ArrayPuntos[PosicionArray] == ArrayPuntos[PosicionArray] + 5;
                 }
             }
