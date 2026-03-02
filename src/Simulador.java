@@ -20,15 +20,26 @@ public class Simulador {
         Competicion competicion2 = new Competicion("Gp de Bahrein", 2);
 
         Circuito circuito1 =  new Circuito("Barcelona", 8);
-        Circuito circuito2 =  new Circuito("Madrid", 8);
-        Circuito circuito3 =  new Circuito("Endurance", 8);
-        Circuito circuito4 =  new Circuito("Grand Prix", 8);
+        Circuito circuito2 =  new Circuito("Madrid", 10);
+        Circuito circuito3 =  new Circuito("Endurance", 11);
+        Circuito circuito4 =  new Circuito("Grand Prix", 20);
 
         Piloto [] pilotos = {piloto1,piloto2,piloto3,piloto4,piloto5,piloto6};
 
-        competicion1.anhadirCarrera(circuito1, 8);
-        competicion2.anhadirCarrera(circuito3, 8);
+        competicion1.anhadirCarrera(circuito1,8);
+        competicion1.anhadirCarrera(circuito2,10);
+        competicion1.anhadirCarrera(circuito3,11);
+        competicion2.anhadirCarrera(circuito1,8);
+        competicion2.anhadirCarrera(circuito2,10);
+        competicion2.anhadirCarrera(circuito4,20);
 
+        competicion1.arrancarCampeonato();
+        competicion2.arrancarCampeonato();
+
+        competicion1.imprimirResultado();
+        competicion1.imprimirResultadoEscuderia();
+        competicion2.imprimirResultado();
+        competicion2.imprimirResultadoEscuderia();
 
     }
 }

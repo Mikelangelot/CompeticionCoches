@@ -5,7 +5,7 @@ public class Piloto {
     private int edad;
     private Coche coche;
     private double habilidad;
-    private Random rand;
+    private Random rand = new Random();
 
     public Piloto(String nombre, int edad,Coche coche, String inputHabilidad){
         if (inputHabilidad.equalsIgnoreCase( "Excelente")){
