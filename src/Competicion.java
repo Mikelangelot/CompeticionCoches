@@ -63,7 +63,7 @@ public class Competicion {
 
         carreras = nuevo;
         numCarreras++;
-        System.out.println("\nCarrera añadida correctamente");
+        System.out.println("Carrera añadida correctamente");
         return true;
 
     }
@@ -75,12 +75,12 @@ public class Competicion {
         campeonatoIniciado = true;
         for (int i = 0; i < carreras.length; i++) {
             Carrera actual = carreras[i];
-            System.out.println("\nCorriendo la carrera " + i + " que ocurre en el circuito " + actual.getQueCircuitoEs().getNombreCircuito());
+            System.out.println("\nCorriendo la carrera Nº" + i + " que ocurre en ' " + actual.getQueCircuitoEs().getNombreCircuito() + " ' " + ":");
             boolean resultadoEjecucion = actual.ejecutarCarrera();
             if (resultadoEjecucion == true) {
                 System.out.println("\nSe ha corrido con éxito esta carrera.");
             } else {
-                System.out.println("\nEsta carrera ya se había corrido! No la corremos de nuevo. ");
+                System.out.println("\nEsta carrera ya se había corrido! No la corremos de nuevo.");
             }
         }
         return true;

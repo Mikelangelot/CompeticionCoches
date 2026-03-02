@@ -83,7 +83,7 @@ public class Carrera {
         carreraCorrida = true;
         queCircuitoEs.anhadirCarrera(this);
 
-        System.out.println("\n Resultado de la carrera en " + queCircuitoEs.getNombreCircuito() + " :");
+        System.out.println("\nResultado de la carrera en " + queCircuitoEs.getNombreCircuito() + " :");
         for (int i = 0; i < pilotoOrdenPorPuesto.length; i++) {
             System.out.println((i + 1) + "º - " + pilotoOrdenPorPuesto[i].getNombre() + " (" + String.format("%.2f", velocidades[i]) + " km/h)");
         }
