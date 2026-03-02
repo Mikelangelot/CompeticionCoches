@@ -159,7 +159,7 @@ public class Competicion {
             }
         }
 
-        System.out.println("CLASIFICACIÓN POR ESCUDERÍAS");
+        System.out.println("\n CLASIFICACIÓN POR ESCUDERÍAS");
         for (int i = 0; i < contador; i++) {
             System.out.println(escuderias[i] + "-" + puntos[i] + "puntos");
         }
