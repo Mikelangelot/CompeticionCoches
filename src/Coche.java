@@ -4,7 +4,7 @@ public class Coche {
     private String escuderia;
     private double velocidadMaxima;
     private double fiabilidad;
-    private Random rand;
+    private Random rand = new Random();
 
     public Coche (String escuderia, double velocidadMaxima, double fiabilidad){
         this.escuderia=escuderia;
@@ -27,10 +27,10 @@ public class Coche {
         return true;
     }
     public String getEscuderia(){
-        return null;
+        return escuderia;
     }
     public double getVelocidadMaxima(){
-        return 0;
+        return velocidadMaxima;
     }
     public String mostrarCoche(){
         return null;

@@ -29,11 +29,11 @@ public class Piloto {
         return coche.getVelocidadMaxima() * habilidad * rand.nextDouble(0.9,1);
     }
 
-    public String getNombre(){return null;}
-    public int getEdad() {return 0;}
-    public Coche getCoche(){return null;}
-    public String mostrarPiloto(){return null;}
-    public double getHabilidad(){return 0;}
+    public String getNombre(){return nombre;}
+    public int getEdad() {return edad;}
+    public Coche getCoche(){return coche;}
+    public String mostrarPiloto(){return  "Piloto: " + nombre + ", Edad: " + edad + ", Habilidad: " + habilidad;}
+    public double getHabilidad(){return habilidad;}
 
 
 }

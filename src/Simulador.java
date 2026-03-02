@@ -9,11 +9,11 @@ public class Simulador {
         Coche coche6 = new Coche("Mercedes", 355, 0.6);
         //Creamos los 6 pilotos
         Piloto piloto1 = new Piloto("Fernando",44,coche1,"Excelente");
-        Piloto piloto2 = new Piloto("Carlos",44,coche1,"Bueno");
-        Piloto piloto3 = new Piloto("Max",44,coche1,"Mediocre");
-        Piloto piloto4 = new Piloto("Colapinto",44,coche1,"Malo");
-        Piloto piloto5 = new Piloto("Hamilton",44,coche1,"Bueno");
-        Piloto piloto6 = new Piloto("Vettel",44,coche1,"Mediocre");
+        Piloto piloto2 = new Piloto("Carlos",38,coche2,"Bueno");
+        Piloto piloto3 = new Piloto("Max",28,coche3,"Mediocre");
+        Piloto piloto4 = new Piloto("Colapinto",35,coche4,"Malo");
+        Piloto piloto5 = new Piloto("Hamilton",30,coche5,"Bueno");
+        Piloto piloto6 = new Piloto("Vettel",40,coche6,"Mediocre");
 
 
         Competicion competicion1 = new Competicion("GP de España",1);
