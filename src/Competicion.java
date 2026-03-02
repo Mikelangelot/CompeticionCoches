@@ -58,7 +58,7 @@ public class Competicion {
 
         carreras=nuevo;
         numCarreras++;
-        System.out.println("Carrera añadida correctamente");
+        System.out.println( "Carrera añadida correctamente");
         return true;
 
     }
@@ -93,7 +93,7 @@ public class Competicion {
                 // Primera Posición del array sumamos 10 puntos
                 if (pilotos[posicionArray] == primero) {
                     arrayPuntos[posicionArray] = arrayPuntos[posicionArray] + 10;
-                    // Segunda posición del array sumamos 8 punto
+                    // Segunda posición del array sumamos 8 puntos
                 } else if (pilotos[posicionArray] == segundo) {
                     arrayPuntos[posicionArray] = arrayPuntos[posicionArray] + 8;
                     // Tercera Posición del array sumamos 5 puntos
@@ -114,7 +114,7 @@ public class Competicion {
             Carrera carrera = carreras[c];
 
 
-            if(!carrera.ejecutarCarrera()) {
+            if(!carrera.isCarreraCorrida()) {
                 continue;
             }
             Piloto[] puestos = carrera.getPilotoOrdenPorPuesto();
