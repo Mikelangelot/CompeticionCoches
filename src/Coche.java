@@ -34,7 +34,7 @@ public class Coche {
     }
 
     public String mostrarCoche() {
-        return mostrarCoche();
+        return "Escudería " + escuderia + ", velocidad máxima: " + velocidadMaxima;
     }
 
 }
