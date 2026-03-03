@@ -38,7 +38,7 @@ public class Circuito {
                 total++;
             }
         }
-        return 0;
+        return total;
     }
 
     //Getters
