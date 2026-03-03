@@ -3,18 +3,6 @@ import java.util.Scanner;
 public class Simulador {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        System.out.print("Introduce el nombre de la competición 1: ");
-        String nombre1 = teclado.nextLine();
-        System.out.print("Introduce el nombre de la competición 2: ");
-        String nombre2 = teclado.nextLine();
-        System.out.print("Introduce el nombre del primer circuito: ");
-        String nombrec1 = teclado.nextLine();
-        System.out.print("Introduce el nombre del segundo circuito: ");
-        String nombrec2 = teclado.nextLine();
-        System.out.print("Introduce el nombre del tercer circuito: ");
-        String nombrec3 = teclado.nextLine();
-        System.out.print("Introduce el nombre del cuarto circuito: ");
-        String nombrec4 = teclado.nextLine();
 
 
         //Creamos los 6 coches
@@ -31,6 +19,38 @@ public class Simulador {
         Piloto piloto4 = new Piloto("Colapinto", 35, coche4, "Excelente");
         Piloto piloto5 = new Piloto("Hamilton", 30, coche5, "Bueno");
         Piloto piloto6 = new Piloto("Vettel", 40, coche6, "Mediocre");
+        System.out.println("Pilotos y escuderías del campeonato en orden: ");
+        System.out.println();
+        System.out.println(piloto1.mostrarPiloto());
+        System.out.println(coche1.mostrarCoche());
+        System.out.println();
+        System.out.println(piloto2.mostrarPiloto());
+        System.out.println(coche2.mostrarCoche());
+        System.out.println();
+        System.out.println(piloto3.mostrarPiloto());
+        System.out.println(coche3.mostrarCoche());
+        System.out.println();
+        System.out.println(piloto4.mostrarPiloto());
+        System.out.println(coche4.mostrarCoche());
+        System.out.println();
+        System.out.println(piloto5.mostrarPiloto());
+        System.out.println(coche5.mostrarCoche());
+        System.out.println();
+        System.out.println(piloto6.mostrarPiloto());
+        System.out.println(coche6.mostrarCoche());
+        System.out.println();
+        System.out.print("Introduce el nombre de la competición 1: ");
+        String nombre1 = teclado.nextLine();
+        System.out.print("Introduce el nombre de la competición 2: ");
+        String nombre2 = teclado.nextLine();
+        System.out.print("Introduce el nombre del primer circuito: ");
+        String nombrec1 = teclado.nextLine();
+        System.out.print("Introduce el nombre del segundo circuito: ");
+        String nombrec2 = teclado.nextLine();
+        System.out.print("Introduce el nombre del tercer circuito: ");
+        String nombrec3 = teclado.nextLine();
+        System.out.print("Introduce el nombre del cuarto circuito: ");
+        String nombrec4 = teclado.nextLine();
 
 
         Competicion competicion1 = new Competicion(nombre1, 1);

@@ -42,7 +42,7 @@ public class Piloto {
     }
 
     public String mostrarPiloto() {
-        return "Piloto: " + nombre + ", Edad: " + edad + ", Habilidad: " + habilidad;
+        return "Piloto: " + nombre + ", Edad: " + edad;
     }
 
     public double getHabilidad() {
