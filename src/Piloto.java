@@ -32,7 +32,7 @@ public class Piloto {
     public String getNombre() {
         return nombre;
     }
-    
+
     public Coche getCoche() {
         return coche;
     }

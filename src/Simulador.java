@@ -82,6 +82,11 @@ public class Simulador {
         competicion1.imprimirResultadoEscuderia();
         competicion2.imprimirResultado();
         competicion2.imprimirResultadoEscuderia();
-
+        System.out.println("Total de carreras en " + competicion1.getNombreComp() +
+                        " y " + competicion2.getNombreComp() + 
+                ": " + " en el primer circuito: " + circuito1.obtenerCarrerasTotales()
+                + ", en el segundo: " + circuito2.obtenerCarrerasTotales() + ", en el tercero: "
+                + circuito3.obtenerCarrerasTotales() + ", en el cuarto: "
+                + circuito4.obtenerCarrerasTotales());
     }
 }
