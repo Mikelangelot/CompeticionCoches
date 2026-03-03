@@ -32,11 +32,7 @@ public class Piloto {
     public String getNombre() {
         return nombre;
     }
-
-    public int getEdad() {
-        return edad;
-    }
-
+    
     public Coche getCoche() {
         return coche;
     }
@@ -44,10 +40,5 @@ public class Piloto {
     public String mostrarPiloto() {
         return "Piloto: " + nombre + ", Edad: " + edad;
     }
-
-    public double getHabilidad() {
-        return habilidad;
-    }
-
 
 }

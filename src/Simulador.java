@@ -15,7 +15,7 @@ public class Simulador {
         //Creamos los 6 pilotos
         Piloto piloto1 = new Piloto("Fernando", 44, coche1, "Excelente");
         Piloto piloto2 = new Piloto("Carlos", 38, coche2, "Bueno");
-        Piloto piloto3 = new Piloto("Max", 28, coche3, "Mediocre");
+        Piloto piloto3 = new Piloto("Max", 28, coche3, "Excelente");
         Piloto piloto4 = new Piloto("Colapinto", 35, coche4, "Excelente");
         Piloto piloto5 = new Piloto("Hamilton", 30, coche5, "Bueno");
         Piloto piloto6 = new Piloto("Vettel", 40, coche6, "Mediocre");
